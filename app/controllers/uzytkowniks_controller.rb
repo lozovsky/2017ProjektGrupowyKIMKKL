@@ -15,7 +15,7 @@ class UzytkowniksController < ApplicationController
   def create
     @uzytkownik = Uzytkownik.new(user_parameters)
     if @uzytkownik.save
-      #flash[:notice]= "Użytkownik został założony"
+      #flash[:notice]= "Użytkownik '#{@uzytkownik.uzytkownik}'' został założony"
       redirect_to(:action => "index")
     else
       render("new")
@@ -29,7 +29,7 @@ class UzytkowniksController < ApplicationController
   def update
     @uzytkownik = Uzytkownik.find(params[:id])
     if @uzytkownik.update_attributes(user_parameters)
-      #flash[:notice]= "Dane użytkownika #{@uzytkownik.uzytkownik} został zaktualizowany"
+      #flash[:notice]= "Dane użytkownika '#{@uzytkownik.uzytkownik}' zostały zaktualizowane"
       redirect_to(:action => "index")
     else
       render("edit")
@@ -37,6 +37,13 @@ class UzytkowniksController < ApplicationController
   end
 
   def delete
+    @uzytkownik = Uzytkownik.find(params[:id])
+  end
+
+  def destroy
+    @uzytkownik = Uzytkownik.find(params[:id]).destroy
+    #flash[:notice]= "Konto użytkownika '#{@uzytkownik.uzytkownik}' zostało usunięte"
+    redirect_to(:action => "index")
   end
 
 

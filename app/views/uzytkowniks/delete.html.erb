@@ -1,2 +1,16 @@
-<h1>Uzytkowniks#delete</h1>
-<p>Find me in app/views/uzytkowniks/delete.html.erb</p>
+<div >
+<h1>Usunięcie konta użytkownika '<%= @uzytkownik.uzytkownik %>'</h1>
+
+<%= form_for(:uzytkownik, :url => {:action => 'destroy', :id => @uzytkownik.id}) do |pole| %>
+
+<p>Czy na pewno usunąć konto użytkownika?</p>
+
+<p><%= @uzytkownik.imie + " " + @uzytkownik.nazwisko %></p>
+
+<div style="text-align: center;">
+	<%= link_to("Powrót", {:action => 'index'})%>
+	<%= submit_tag("Usuń") %>
+</div>
+
+<% end %>
+</div>
