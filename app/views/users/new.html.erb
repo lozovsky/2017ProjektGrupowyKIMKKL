@@ -1,2 +1,14 @@
-<% provide(:title, 'Sign up') %>
-<h1>singup!</h1>
+<div>
+<h1>Nowy Uzytkownik</h1>
+
+	<%= form_for(:uzytkownik, :url => {:action => 'create'}) do |pole| %>
+
+		<%= render(:partial => "form", :locals => {:pole => pole}) %>
+
+		<div style="text-align: center;">
+			<%= link_to("Powrót", {:action => 'index'}, :class => 'btn btn-warning')%>
+			<%= submit_tag("Utwórz", :class => 'btn  btn-primary') %>
+		</div>
+
+	<% end %>
+</div>
