@@ -19,5 +19,5 @@ class Uzytkownik < ApplicationRecord
 			  :format => EMAIL_REGEX,
 			  :confirmation => true
 
-	scope :sortuj, lambda{order("nazwisko ASC, imie ASC")}
+	scope :sortuj, lambda{order("uzytkownik ASC")}
 end

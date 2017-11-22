@@ -1,0 +1,27 @@
+
+<table>
+	<tr>
+		<th><%= pole.label(:imie) %></th>
+		<td><%= pole.text_field(:imie) %></td>
+	</tr>
+	<tr>
+		<th><%= pole.label(:nazwisko) %></th>
+		<td><%= pole.text_field(:nazwisko) %></td>
+	</tr>
+	<tr>
+		<th><%= pole.label(:uzytkownik) %></th>
+		<td><%= pole.text_field(:uzytkownik) %></td>
+	</tr>	
+	<tr>
+		<th><%= pole.label(:email) %></th>
+		<td><%= pole.text_field(:email) %></td>
+	</tr>	
+	<tr>
+		<th><%= pole.label(:password, "hasło:") %></th>
+		<td><%= pole.password_field(:password) %></td>
+	</tr>
+	<tr>
+		<th><%= pole.label(:password_confirmation, "powtórz hasło: ") %></th>
+		<td><%= pole.password_field(:password_confirmation) %></td>
+	</tr>		
+</table>

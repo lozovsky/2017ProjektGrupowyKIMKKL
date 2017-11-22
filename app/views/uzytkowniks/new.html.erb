@@ -1,2 +1,14 @@
-<h1>Uzytkowniks#new</h1>
-<p>Find me in app/views/uzytkowniks/new.html.erb</p>
+<div>
+<h1>Nowy Uzytkownik</h1>
+
+<%= form_for(:uzytkownik, :url => {:action => 'create'}) do |pole| %>
+
+<%= render(:partial => "form", :locals => {:pole => pole}) %>
+
+<div style="text-align: center;">
+	<%= link_to("Powrót", {:action => 'index'})%>
+	<%= submit_tag("Utwórz") %>
+</div>
+
+<% end %>
+</div>
