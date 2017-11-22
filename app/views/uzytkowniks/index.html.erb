@@ -1,28 +1,28 @@
 <div >
 <h1>Uzytkownicy</h1>
 
-<%= link_to("Dodaj nowego użytkownika", {:action => 'new'})%>
+	<%= link_to("Dodaj nowego użytkownika", {:action => 'new'})%>
 
-  <p style="text-align: right;">Ilość uzytkowników: <%= @uzytkownik.size %></p>
+	  <p style="text-align: right;">Ilość uzytkowników: <%= @uzytkownik.size %></p>
 
-  <table >
-	<tr>
-		<th>użytkownik</th>
-		<th>Imię i Nazwisko</th>
-		<th>email</th>
-		<th>akcja</th>
-	</tr>
-<% @uzytkownik.each do |uzytkownik| %>	
-	<tr>
-		<td><%= uzytkownik.uzytkownik %></td>
-		<td><%= uzytkownik.imie + " " + uzytkownik.nazwisko %></td>
-		<td><%= mail_to(uzytkownik.email) %></td>
-		<td>
-			<%= link_to("Edycja", {:action => 'edit', :id => uzytkownik.id}) %>			
-			<%= link_to("Usuń",  {:action => 'delete', :id => uzytkownik.id}) %>			
-		</td>
-	</tr>
-<% end %>
+	  <table >
+		<tr>
+			<th>użytkownik</th>
+			<th>Imię i Nazwisko</th>
+			<th>email</th>
+			<th>akcja</th>
+		</tr>
+	<% @uzytkownik.each do |uzytkownik| %>	
+		<tr>
+			<td><%= uzytkownik.uzytkownik %></td>
+			<td><%= uzytkownik.imie + " " + uzytkownik.nazwisko %></td>
+			<td><%= mail_to(uzytkownik.email) %></td>
+			<td>
+				<%= link_to("Edycja", {:action => 'edit', :id => uzytkownik.id}) %>			
+				<%= link_to("Usuń",  {:action => 'delete', :id => uzytkownik.id}) %>			
+			</td>
+		</tr>
+	<% end %>
 
 </table>
 </div>

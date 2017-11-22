@@ -1,15 +1,15 @@
 <div>
 <h1>Edycja danych użytkownika: <%= @uzytkownik.imie + " " + @uzytkownik.nazwisko %></h1>
 
-<%= form_for(:uzytkownik, :url => {:action => 'update', :id => @uzytkownik.id}) do |pole| %>
+	<%= form_for(:uzytkownik, :url => {:action => 'update', :id => @uzytkownik.id}) do |pole| %>
 
-<%= render(:partial => "form", :locals => {:pole => pole}) %>
+		<%= render(:partial => "form", :locals => {:pole => pole}) %>
 
-<div style="text-align: center;">
-	<%= link_to("anuluj", {:action => 'index'})%>
-	<%= submit_tag("Aktualizuj") %>
-</div>
+		<div style="text-align: center;">
+			<%= link_to("anuluj", {:action => 'index'})%>
+			<%= submit_tag("Aktualizuj") %>
+		</div>
 
-<% end %>
+	<% end %>
 
 </div>

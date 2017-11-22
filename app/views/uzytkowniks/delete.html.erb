@@ -1,16 +1,16 @@
 <div >
 <h1>Usunięcie konta użytkownika '<%= @uzytkownik.uzytkownik %>'</h1>
 
-<%= form_for(:uzytkownik, :url => {:action => 'destroy', :id => @uzytkownik.id}) do |pole| %>
+	<%= form_for(:uzytkownik, :url => {:action => 'destroy', :id => @uzytkownik.id}) do |pole| %>
 
-<p>Czy na pewno usunąć konto użytkownika?</p>
+		<p>Czy na pewno usunąć konto użytkownika?</p>
 
-<p><%= @uzytkownik.imie + " " + @uzytkownik.nazwisko %></p>
+		<p><%= @uzytkownik.imie + " " + @uzytkownik.nazwisko %></p>
 
-<div style="text-align: center;">
-	<%= link_to("Powrót", {:action => 'index'})%>
-	<%= submit_tag("Usuń") %>
-</div>
+		<div style="text-align: center;">
+			<%= link_to("Powrót", {:action => 'index'})%>
+			<%= submit_tag("Usuń") %>
+		</div>
 
-<% end %>
+	<% end %>
 </div>
