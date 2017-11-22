@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   before_save { email.downcase! }
-
+  
   validates :nickname, 
     presence: { in: true, message: ": #{@empty_field_eror}" },
     length: { maximum: 20, minimum: 4, message: ": #{@nickname_length_error}" },
