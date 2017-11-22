@@ -8,7 +8,7 @@ class CreateUzytkowniks < ActiveRecord::Migration[5.1]
       t.string "password_digest"
       t.timestamps
     end
-    add_index("uzytkowniks", "uzytkownik")
+    add_index("uzytkowniks","uzytkownik")
   end
 
   def down

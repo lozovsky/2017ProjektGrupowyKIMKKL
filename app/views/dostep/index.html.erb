@@ -1,5 +1,6 @@
-<div>
-  <h3>Admin Menu</h3>     
-    <%= link_to("Użytkownicy",{:controller => 'uzytkowniks'}) %>
-    <%= link_to("Wyloguj", {:action => 'logout'}) %>
+<div class="hero-unit">
+  <h3>Witamy w panelu administratora</h3>
+       
+    <%= link_to("Użytkownicy",{:controller => 'uzytkowniks'}, :class => 'btn btn-default') %>
+    <%= link_to("Wyloguj", {:action => 'logout'}, :class => 'btn btn-default') %>
 </div>

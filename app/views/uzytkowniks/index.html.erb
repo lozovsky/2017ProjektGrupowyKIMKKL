@@ -1,12 +1,12 @@
 <div >
-<h1>Uzytkownicy</h1>
+<h1>Lista użytkowników</h1>
 
-	<%= link_to("Dodaj nowego użytkownika", {:action => 'new'})%>
+	<%= link_to("Dodaj nowego użytkownika", {:action => 'new'}, :class => 'btn btn-mini btn-primary')%>
 
 	  <p style="text-align: right;">Ilość uzytkowników: <%= @uzytkownik.size %></p>
 
-	  <table >
-		<tr>
+	  <table class="table table-striped">
+		<tr class="info">
 			<th>użytkownik</th>
 			<th>Imię i Nazwisko</th>
 			<th>email</th>
@@ -17,9 +17,9 @@
 			<td><%= uzytkownik.uzytkownik %></td>
 			<td><%= uzytkownik.imie + " " + uzytkownik.nazwisko %></td>
 			<td><%= mail_to(uzytkownik.email) %></td>
-			<td>
-				<%= link_to("Edycja", {:action => 'edit', :id => uzytkownik.id}) %>			
-				<%= link_to("Usuń",  {:action => 'delete', :id => uzytkownik.id}) %>			
+			<td class="actions">
+				<%= link_to("Edycja", {:action => 'edit', :id => uzytkownik.id}, :class => 'btn btn-xs btn-primary') %>			
+				<%= link_to("Usuń",  {:action => 'delete', :id => uzytkownik.id},:class => 'btn btn-xs btn-danger') %>			
 			</td>
 		</tr>
 	<% end %>

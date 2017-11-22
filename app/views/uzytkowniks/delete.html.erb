@@ -8,8 +8,8 @@
 		<p><%= @uzytkownik.imie + " " + @uzytkownik.nazwisko %></p>
 
 		<div style="text-align: center;">
-			<%= link_to("Powrót", {:action => 'index'})%>
-			<%= submit_tag("Usuń") %>
+			<%= link_to("Powrót", {:action => 'index'}, :class => 'btn btn-primary')%>
+			<%= submit_tag("Usuń", :class =>  'btn  btn-danger') %>
 		</div>
 
 	<% end %>

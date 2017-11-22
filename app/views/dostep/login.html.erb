@@ -1,6 +1,6 @@
-<div>
+<div class="form-group">
   <%= form_tag(:action => 'logowanie') do %>
-  <table>
+  <table class="table table-striped">
     <tr>
       <td><%= label_tag(:uzytkownik, "Użytkownik: ") %></td>
       <td><%= text_field_tag(:uzytkownik) %></td>
@@ -11,7 +11,7 @@
     </tr>
     <tr>
       <td>&nbsp;</td>
-      <td><%= submit_tag("Zaloguj") %></td>
+      <td><%= submit_tag("Zaloguj", :class => 'btn  btn-primary') %></td>
     </tr>
   </table>
   <% end %>

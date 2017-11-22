@@ -6,8 +6,8 @@
 		<%= render(:partial => "form", :locals => {:pole => pole}) %>
 
 		<div style="text-align: center;">
-			<%= link_to("Powrót", {:action => 'index'})%>
-			<%= submit_tag("Utwórz") %>
+			<%= link_to("Powrót", {:action => 'index'}, :class => 'btn btn-warning')%>
+			<%= submit_tag("Utwórz", :class => 'btn  btn-primary') %>
 		</div>
 
 	<% end %>

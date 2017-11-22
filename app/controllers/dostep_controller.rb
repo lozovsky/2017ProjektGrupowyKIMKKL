@@ -1,7 +1,7 @@
 class DostepController < ApplicationController
  
  before_action :sprawdz_logowanie, :except => [:login, :logowanie, :logout]
- layout false
+ #layout false
 
  def index
   end
