@@ -1,4 +1,6 @@
 class UzytkowniksController < ApplicationController
+  
+  before_action :sprawdz_logowanie
   layout false
 
 
