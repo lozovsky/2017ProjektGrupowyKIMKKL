@@ -13,7 +13,7 @@ class UzytkowniksController < ApplicationController
   end
 
   def create
-    @uzytkownik = Uzytkownik.new(uzytkownik_parametry)
+    @uzytkownik = Uzytkownik.new(user_parameters)
     if @uzytkownik.save
       #flash[:notice]= "Użytkownik został założony"
       redirect_to(:action => "index")
@@ -30,7 +30,7 @@ class UzytkowniksController < ApplicationController
 
 
 private
-  def uzytkownik_parametry
+  def user_parameters
     params.require(:uzytkownik).permit(:imie,:nazwisko,:email,:uzytkownik,:password,:password_confirmation)
   end
 

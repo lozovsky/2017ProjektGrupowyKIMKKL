@@ -8,4 +8,8 @@ module ApplicationHelper
       page_title + " | " + base_title
     end
   end
+
+  def error(objekt)
+		render(:partial => 'inne/error', :locals => {:objekt => objekt})
+	end
 end
