@@ -1,2 +1,15 @@
-<h1>Uzytkowniks#edit</h1>
-<p>Find me in app/views/uzytkowniks/edit.html.erb</p>
+<div>
+<h1>Edycja danych użytkownika: <%= @uzytkownik.imie + " " + @uzytkownik.nazwisko %></h1>
+
+<%= form_for(:uzytkownik, :url => {:action => 'update', :id => @uzytkownik.id}) do |pole| %>
+
+<%= render(:partial => "form", :locals => {:pole => pole}) %>
+
+<div style="text-align: center;">
+	<%= link_to("anuluj", {:action => 'index'})%>
+	<%= submit_tag("Aktualizuj") %>
+</div>
+
+<% end %>
+
+</div>

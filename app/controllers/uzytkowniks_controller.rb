@@ -23,6 +23,17 @@ class UzytkowniksController < ApplicationController
   end
 
   def edit
+    @uzytkownik = Uzytkownik.find(params[:id])
+  end
+
+  def update
+    @uzytkownik = Uzytkownik.find(params[:id])
+    if @uzytkownik.update_attributes(user_parameters)
+      #flash[:notice]= "Dane użytkownika #{@uzytkownik.uzytkownik} został zaktualizowany"
+      redirect_to(:action => "index")
+    else
+      render("edit")
+    end
   end
 
   def delete
