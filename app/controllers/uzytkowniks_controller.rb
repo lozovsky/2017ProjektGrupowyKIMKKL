@@ -5,6 +5,7 @@ class UzytkowniksController < ApplicationController
 
 
   def index
+    @uzytkownik = Uzytkownik.sortuj
   end
 
   def new
