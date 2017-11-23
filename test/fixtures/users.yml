@@ -6,3 +6,10 @@ one:
   surname: jez
   email: miesny@jez.pl
   password_digest: <%= User.digest('password') %>
+
+two:
+  nickname: tr0jan
+  name: kon
+  surname: trojanski
+  email: kon@trojanski.gr
+  password_digest: <%= User.digest('password') %>
