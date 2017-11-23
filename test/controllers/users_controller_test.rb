@@ -3,6 +3,7 @@ require 'test_helper'
 class UsersControllerTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:one)
+    @anotherUser = users(:two)
   end
 
   test "should get new" do
@@ -29,4 +30,24 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to login_url
   end
 
+  test "should redirect edit when logged in as wrong user" do
+    log_in_as(@anotherUser)
+    get edit_user_path(@user)
+    assert flash.empty?
+    assert_redirected_to root_url
+  end
+
+  test "should redirect update when logged in as wrong user" do
+    log_in_as(@anotherUser)
+    patch user_path(@user), params: {
+      user: {
+        nickname: @user.nickname,
+        name: @user.name,
+        surname: @user.surname,
+        email: @user.email
+      }
+    }
+    assert flash.empty?
+    assert_redirected_to root_url
+  end
 end
