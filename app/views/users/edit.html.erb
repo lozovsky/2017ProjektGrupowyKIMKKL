@@ -1,15 +1,30 @@
-<div>
-<h1>Edycja danych użytkownika: <%= @uzytkownik.imie + " " + @uzytkownik.nazwisko %></h1>
+<% provide(:title, "Edycja profilu") %>
+<h1>Zaktualizuj swój profil</h1>
 
-	<%= form_for(:uzytkownik, :url => {:action => 'update', :id => @uzytkownik.id}) do |pole| %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages' %>
 
-		<%= render(:partial => "form", :locals => {:pole => pole}) %>
+      <%= f.label :nickname %>
+      <%= f.text_field :nickname, class: 'form-control' %>
 
-		<div style="text-align: center;">
-			<%= link_to("anuluj", {:action => 'index'}, :class => 'btn btn-warning')%>
-			<%= submit_tag("aktualizuj", :class => 'btn  btn-primary') %>
-		</div>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
 
-	<% end %>
+      <%= f.label :surname %>
+      <%= f.text_field :surname, class: 'form-control' %>
 
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+      <%= f.submit "Zapisz zmiany", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 </div>
