@@ -35,6 +35,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt'
 # Sample users generator
 gem 'faker'
+# Break user list into pages
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
