@@ -3,7 +3,8 @@ User.create!(nickname: "DEMACIA",
             surname: "IV",
             email: "jarvan.the.fourth@mail.com",
             password: "garensucks",
-            password_confirmation: "garensucks")
+            password_confirmation: "garensucks",
+            admin: true)
 
 99.times do |n|
   nickname = Faker::Lorem.characters(15)
