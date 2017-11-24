@@ -11,6 +11,7 @@ How to make it run on localhost
 ```
 $ bundle install --without production
 $ rails db:migrate
+$ rails db:seed
 $ rails t
 $ rails s
 ```
