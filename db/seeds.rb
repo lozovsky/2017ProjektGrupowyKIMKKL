@@ -19,3 +19,15 @@ User.create!(nickname: "DEMACIA",
                password: password,
                password_confirmation: password)
 end
+
+100.times do |n|
+  name = Faker::Address.street_name
+  Stop.create!(name: name)
+end
+
+10.times do |n|
+  name = n + 1
+  Line.create!(name: name)
+end
+
+
