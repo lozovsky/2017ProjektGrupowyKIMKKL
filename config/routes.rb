@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
 
-resources :stops do
-  	member do
-  		get :delete
-  end
-end
+  resources :lines
   resources :stops
 
   root 'static_pages#home'

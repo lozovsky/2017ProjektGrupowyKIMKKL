@@ -1,0 +1,6 @@
+<% provide(:title, 'Edycja linii') %>
+
+
+<h1>Edytuj linii tramwajowej <%= @line.name %></h1>
+
+<%= render partial: "form", locals: {button_name: "Aktualizuj"}   %>

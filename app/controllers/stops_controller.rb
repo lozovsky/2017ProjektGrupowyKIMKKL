@@ -37,18 +37,7 @@ class StopsController < ApplicationController
   	@stop = Stop.find(params[:id])
   end
 
-  def delete
-  	@stop = Stop.find(params[:id])
-  end
-
-  def destroy
-  	@stop = Stop.find(params[:id]).destroy
-  	flash[:notice] = "Przystanek '#{@stop.name}' został usunięty"
-    redirect_to stops_path
-  end
-
-
- private 
+private 
   def stop_params
   	params.require(:stop).permit(:name, :created_at, :updated_at)
   end

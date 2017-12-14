@@ -18,10 +18,9 @@
 				<tr>
 					<td><%= stop.id %></td>
 					<td><%= stop.name.html_safe %></td>
-					<td>
+					<td class = "rightbuttonstable ">
 						<%= link_to "Pokaż", stop_path(stop), class: "btn btn-default btn-xs" %>
 						<%= link_to "Edytuj", edit_stop_path(stop), class: "btn btn-primary btn-xs" %>
-						<%= link_to "Usuń", delete_stop_path(stop), class: "btn btn-warning btn-xs" %>
 					</td>
 					
 				</tr>

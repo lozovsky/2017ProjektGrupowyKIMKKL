@@ -1,0 +1,24 @@
+ 	<h1>Linia <span class="stopname"><%= @line.name %></span></h1>
+
+
+		<table class="table table-striped">
+			<tr>
+				<th>Nazwa linii tramwajowej:</th>
+				<td><%= @line.name %></td>
+			</tr>
+
+			<tr>
+				<th>Data wprowadzenia do bazy danych:</th>
+				<td><%= @line.created_at %></td>
+			</tr>
+
+			<tr>
+				<th>Data ostatniej aktualizacji:</th>
+				<td><%= @line.updated_at %></td>
+			</tr>
+		</table>
+
+		<div>
+			<%= link_to 'Powrót', lines_path, class: "btn btn-warning "%>
+		</div>
+	
