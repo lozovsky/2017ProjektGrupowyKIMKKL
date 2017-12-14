@@ -1,0 +1,30 @@
+ 	<h1>Rozkład jazdy</h1>
+
+
+		<table class="table table-striped">
+			<tr>
+				<th>Linia tramwajowa:</th>
+				<td><%= @timetable.line.name %></td>
+			</tr>
+
+			<tr>
+				<th>Godzina odjazdu:</th>
+				<td><%= @timetable.departure_time %></td>
+			</tr>
+
+
+			<tr>
+				<th>Data wprowadzenia do bazy danych:</th>
+				<td><%= @timetable.created_at %></td>
+			</tr>
+
+			<tr>
+				<th>Data ostatniej aktualizacji:</th>
+				<td><%= @timetable.updated_at %></td>
+			</tr>
+		</table>
+
+		<div>
+			<%= link_to 'Powrót', timetables_path, class: "btn btn-warning "%>
+		</div>
+	

@@ -1,0 +1,35 @@
+ <% provide(:title, 'Rozkład jazdy') %>
+
+<h1>Lista Przystanków</h1>
+
+<!--Przycisk new -->
+<p><%= link_to "Dodaj nowy rozkład jazdy", new_timetable_path, class: "btn btn-success" %></p>
+
+<!--Poczatek tabeli -->
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Linia tramwajowa</th>
+			<th>Godzina odjazdu</th>
+		</tr>
+
+		<tbody>
+			<% @timetables.each do |t| %>
+				<tr>
+					<td><%= t.id %></td>
+					<td><%= t.line.name %></td>
+					<td><%= t.departure_time %></td>
+					<td class = "rightbuttonstable ">
+						<%= link_to "Pokaż", timetable_path(t), class: "btn btn-default btn-xs" %>
+						<%= link_to "Edytuj", edit_timetable_path(t), class: "btn btn-primary btn-xs" %>
+						<%= link_to "Usuń", delete_timetable_path(t), class: "btn btn-danger btn-xs" %>
+					</td>
+					
+				</tr>
+			<% end %>
+		</tbody>
+	</thead>
+</table>
+<!--koniec tabeli -->
+

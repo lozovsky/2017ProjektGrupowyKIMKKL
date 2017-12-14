@@ -1,0 +1,35 @@
+  	<% if @timetable.errors.present? %>
+		<div class="alert alert-danger">
+			<p>Wystapiły następujące błędy:</p>
+			<ol>
+				<% @timetable.errors.full_messages.each do |message| %>
+					<li><%= message.titleize %></li>
+				<% end%>
+			</ol>
+		</div>
+	<% end %>
+
+
+		
+<%= form_for @timetable do |f| %>
+
+
+	<table class="table table-striped">
+		<tr>
+			<th><%= f.label :line_id, "Linia tramwajowa: " %></th>
+			<td><%= f.select :line_id, @line.map{|m| [m.name,m.id]}, class: "form-control" %></td>
+		</tr>
+
+		<tr>
+			<th><%= f.label :departure_time, "Godzina odjazdu: "%></th>
+			<td><%= f.datetime_select :departure_time,{order: [:time,:year,:month,:day],start_year: 2017}, {class: "lol"}%></td>
+		</tr>
+
+	</table>
+
+	<div class = "buttonform">
+		<%= f.submit button_name, class: "btn btn-primary sizebtn" %>
+		<%= link_to 'Powrót', timetables_path, class: "btn btn-warning sizebtn" %>
+	</div>
+
+<% end %>
