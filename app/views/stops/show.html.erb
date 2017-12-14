@@ -1,0 +1,24 @@
+ 	<h1>Przystanek <span class="stopname"><%= @stop.name %></span></h1>
+
+
+		<table class="table table-striped">
+			<tr>
+				<th>Nazwa przystanku:</th>
+				<td><%= @stop.name %></td>
+			</tr>
+
+			<tr>
+				<th>Data wprowadzenia do bazy danych:</th>
+				<td><%= @stop.created_at %></td>
+			</tr>
+
+			<tr>
+				<th>Data ostatniej aktualizacji:</th>
+				<td><%= @stop.updated_at %></td>
+			</tr>
+		</table>
+
+		<div>
+			<%= link_to 'Powrót', stops_path, class: "btn btn-warning "%>
+		</div>
+	

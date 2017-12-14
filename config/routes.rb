@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
+resources :stops do
+  	member do
+  		get :delete
+  end
+end
+  resources :stops
 
   root 'static_pages#home'
 

@@ -1,0 +1,28 @@
+ 	<% if @stop.errors.present? %>
+		<div class="alert alert-danger">
+			<p>Wystapiły następujące błędy:</p>
+			<ol>
+				<% @stop.errors.full_messages.each do |message| %>
+					<li><%= message.titleize %></li>
+				<% end%>
+			</ol>
+		</div>
+	<% end %>
+
+
+		
+<%= form_for @stop do |f| %>
+
+		<div class="form-group">
+			<%= f.label :name, "Nazwa przystanku: " %>
+			<%= f.text_field :name, class: "form-control" %>
+		</div>
+
+		<div class = "buttonform">
+			<%= f.submit button_name, class: "btn btn-primary sizebtn" %>
+			<%= link_to 'Powrót', stops_path, class: "btn btn-warning sizebtn" %>
+		</div>
+		
+<% end %>
+
+
