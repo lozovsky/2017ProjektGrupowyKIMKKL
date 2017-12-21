@@ -1,0 +1,28 @@
+  	<% if @line.errors.present? %>
+		<div class="alert alert-danger">
+			<p>Wystapiły następujące błędy:</p>
+			<ol>
+				<% @line.errors.full_messages.each do |message| %>
+					<li><%= message.titleize %></li>
+				<% end%>
+			</ol>
+		</div>
+	<% end %>
+
+
+		
+<%= form_for @line do |f| %>
+
+		<div class="form-group">
+			<%= f.label :name, "Nazwa linia tramwajowej: " %>
+			<%= f.text_field :name, class: "form-control" %>
+		</div>
+
+		<div class = "buttonform">
+			<%= f.submit button_name, class: "btn btn-primary sizebtn" %>
+			<%= link_to 'Powrót', lines_path, class: "btn btn-warning sizebtn" %>
+		</div>
+		
+<% end %>
+
+

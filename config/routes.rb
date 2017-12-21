@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
-  get 'sessions/new'
+  resources :timetables do
+    member do
+      get :delete
+    end
+  end
+
+  resources :lines
+  resources :stops
+  resources :timetables
 
   root 'static_pages#home'
 
@@ -11,6 +19,10 @@ Rails.application.routes.draw do
   get     '/login',     to: 'sessions#new'
   post    '/login',     to: 'sessions#create'
   delete  '/logout',    to: 'sessions#destroy'
+
+  get '/timetable', to: 'timetables#index'
+  get '/stops', to: 'stops#index'
+  get '/lines',  to: 'lines#index'
 
   resources :users
 end

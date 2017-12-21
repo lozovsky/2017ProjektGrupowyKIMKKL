@@ -1,0 +1,32 @@
+<% provide(:title, 'Przystanki') %>
+
+<h1>Lista Przystanków</h1>
+
+<!--Przycisk new -->
+<p><%= link_to "Dodaj nowy przystanek", new_stop_path, class: "btn btn-success" %></p>
+
+<!--Poczatek tabeli -->
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Nazwa przystanku</th>
+		</tr>
+
+		<tbody>
+			<% @stops.each do |stop| %>
+				<tr>
+					<td><%= stop.id %></td>
+					<td><%= stop.name.html_safe %></td>
+					<td class = "rightbuttonstable ">
+						<%= link_to "Pokaż", stop_path(stop), class: "btn btn-default btn-xs" %>
+						<%= link_to "Edytuj", edit_stop_path(stop), class: "btn btn-primary btn-xs" %>
+					</td>
+					
+				</tr>
+			<% end %>
+		</tbody>
+	</thead>
+</table>
+<!--koniec tabeli -->
+

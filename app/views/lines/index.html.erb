@@ -1,0 +1,33 @@
+<% provide(:title, 'Linie') %>
+
+<h1>Lista linii tramwajowych</h1>
+
+<!--Przycisk new -->
+<p><%= link_to "Dodaj nową linie tramwajową", new_line_path, class: "btn btn-success" %></p>
+
+<!--Poczatek tabeli -->
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Nazwa linii tramwajowej</th>
+		</tr>
+
+		<tbody>
+			<% @lines.each do |line| %>
+				<tr>
+					<td><%= line.id %></td>
+					<td><%= line.name.html_safe %></td>
+					<td class = "rightbuttonstable ">
+						<%= link_to "Pokaż", line_path(line), class: "btn btn-default btn-xs" %>
+						<%= link_to "Edytuj", edit_line_path(line), class: "btn btn-primary btn-xs" %>
+			
+					</td>
+					
+				</tr>
+			<% end %>
+		</tbody>
+	</thead>
+</table>
+<!--koniec tabeli -->
+
