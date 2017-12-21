@@ -20,5 +20,9 @@ Rails.application.routes.draw do
   post    '/login',     to: 'sessions#create'
   delete  '/logout',    to: 'sessions#destroy'
 
+  get '/timetable', to: 'timetables#index'
+  get '/stops', to: 'stops#index'
+  get '/lines',  to: 'lines#index'
+
   resources :users
 end
