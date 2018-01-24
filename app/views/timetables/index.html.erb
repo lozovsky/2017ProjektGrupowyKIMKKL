@@ -19,7 +19,7 @@
 				<tr>
 					<td><%= t.id %></td>
 					<td><%= t.line.name %></td>
-					<td><%= t.departure_time %></td>
+					<td><%= t.departure_time.strftime('%H:%M') %></td>
 					<td class = "rightbuttonstable ">
 						<%= link_to "Pokaż", timetable_path(t), class: "btn btn-default btn-xs" %>
 						<%= link_to "Edytuj", edit_timetable_path(t), class: "btn btn-primary btn-xs" %>
