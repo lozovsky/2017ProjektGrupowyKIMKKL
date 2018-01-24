@@ -1,2 +1,9 @@
-<h1>Routes#delete</h1>
-<p>Find me in app/views/routes/delete.html.erb</p>
+<h3>Usunięcie trasy</h3>
+
+
+<p>Czy na pewno chcesz usunac trasę?</p>
+
+<p>
+	<%= link_to "Tak", route_path(@route), method: :delete, class: "btn btn-danger" %>
+	<%= link_to "Nie", routes_path, class: "btn btn-default" %>
+</p> 

@@ -1,2 +1,34 @@
-<h1>Routes#show</h1>
-<p>Find me in app/views/routes/show.html.erb</p>
+ 	<h1>Trasa</h1>
+
+
+		<table class="table table-striped">
+			<tr>
+				<th>Linia tramwajowa:</th>
+				<td><%= @route.line.name %></td>
+			</tr>
+			<tr>
+				<th>ID odcinka na trasie:</th>
+				<td><%= @route.distance.id %></td>
+			</tr>
+
+			<tr>
+				<th>Kolejność, w której wystąpi odcinek:</th>
+				<td><%= @route.stop_number %></td>
+			</tr>
+
+
+			<tr>
+				<th>Data wprowadzenia do bazy danych:</th>
+				<td><%= @route.created_at %></td>
+			</tr>
+
+			<tr>
+				<th>Data ostatniej aktualizacji:</th>
+				<td><%= @route.updated_at %></td>
+			</tr>
+		</table>
+
+		<div>
+			<%= link_to 'Powrót', routes_path, class: "btn btn-warning "%>
+		</div>
+	

@@ -32,14 +32,14 @@ class RoutesController < ApplicationController
   end
 
   def update
-      @route = Route.find(params[:id])
+    @route = Route.find(params[:id])
 
-      if @route.update_attributes(timetable_params)
-        flash[:notice] = "Trasa została pomyślnie zaktualizowana."
-        redirect_to routes_path
-      else
-        render action: 'edit'
-      end
+    if @route.update_attributes(timetable_params)
+      flash[:notice] = "Trasa została pomyślnie zaktualizowana."
+      redirect_to routes_path
+    else
+      render action: 'edit'
+    end
   end
 
   def delete
@@ -48,9 +48,9 @@ class RoutesController < ApplicationController
 
   def destroy
     @route = Route.find(params[:id])
-      @route.destroy
-      flash[:notice] = "Pomyślnie usunięto trasę"
-      redirect_to routes_path
+    @route.destroy
+    flash[:notice] = "Pomyślnie usunięto trasę"
+    redirect_to routes_path
   end
 
 private
