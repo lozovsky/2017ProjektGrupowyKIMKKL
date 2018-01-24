@@ -1,0 +1,37 @@
+ <% provide(:title, 'Trasa') %>
+
+
+<h1>Lista dostępnych tras</h1>
+
+<!--Przycisk new -->
+<p><%= link_to "Dodaj nową trasę", new_route_path, class: "btn btn-success" %></p>
+
+<!--Poczatek tabeli -->
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Linia tramwajowa</th>
+			<th>Odcinek na trasie</th>
+			<th>Kolejność odcinka na trasie</th>
+		</tr>
+
+		<tbody>
+			<% @routes.each do |r| %>
+				<tr>
+					<td><%= r.id %></td>
+					<td><%= r.line.name %></td>
+					<td><%= r.distance.id %></td>
+					<td><%= r.stop_number %></td>
+					<td class = "rightbuttonstable ">
+						<%= link_to "Pokaż", route_path(r), class: "btn btn-default btn-xs" %>
+						<%= link_to "Edytuj", edit_route_path(r), class: "btn btn-primary btn-xs" %>
+						<%= link_to "Usuń", delete_route_path(r), class: "btn btn-danger btn-xs" %>
+					</td>
+					
+				</tr>
+			<% end %>
+		</tbody>
+	</thead>
+</table>
+<!--koniec tabeli -->

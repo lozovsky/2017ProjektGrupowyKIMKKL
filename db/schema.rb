@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171214131241) do
+ActiveRecord::Schema.define(version: 20171214130553) do
 
   create_table "distances", force: :cascade do |t|
     t.integer "from_stop_id"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20171214131241) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index [nil], name: "index_lines_on_line_name"
   end
 
   create_table "routes", force: :cascade do |t|

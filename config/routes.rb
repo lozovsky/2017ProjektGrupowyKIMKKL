@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
 
+
   resources :timetables do
+    member do
+      get :delete
+    end
+  end
+
+  resources :routes do
     member do
       get :delete
     end
@@ -9,6 +16,7 @@ Rails.application.routes.draw do
   resources :lines
   resources :stops
   resources :timetables
+  resources :routes
 
   root 'static_pages#home'
 

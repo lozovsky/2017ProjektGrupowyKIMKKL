@@ -29,15 +29,15 @@ class TimetablesController < ApplicationController
 	end
 
 	def update
-  	@timetable = Timetable.find(params[:id])
+	  	@timetable = Timetable.find(params[:id])
 
-  	if @timetable.update_attributes(timetable_params)
-  		flash[:notice] = "Rozkład jazdy został pomyślnie zaktualizowany."
-  		redirect_to timetables_path
-  	else
-  		render action: 'edit'
-  	end
-  end
+	  	if @timetable.update_attributes(timetable_params)
+	  		flash[:notice] = "Rozkład jazdy został pomyślnie zaktualizowany."
+	  		redirect_to timetables_path
+	  	else
+	  		render action: 'edit'
+	  	end
+ 	end
 	
 
 	def delete
