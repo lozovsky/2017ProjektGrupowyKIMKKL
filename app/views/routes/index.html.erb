@@ -21,7 +21,7 @@
 				<tr>
 					<td><%= r.id %></td>
 					<td><%= r.line.name %></td>
-					<td><%= r.distance.id %></td>
+					<td><%= r.distance.from_stop.name + "-" + r.distance.to_stop.name %></td>
 					<td><%= r.stop_number %></td>
 					<td class = "rightbuttonstable ">
 						<%= link_to "Pokaż", route_path(r), class: "btn btn-default btn-xs" %>

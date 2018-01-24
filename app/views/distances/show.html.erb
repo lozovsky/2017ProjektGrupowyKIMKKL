@@ -1,2 +1,30 @@
-<h1>Distances#show</h1>
-<p>Find me in app/views/distances/show.html.erb</p>
+ 	<h1>Odcinek <%= @distance.from_stop.name + "-" + @distance.to_stop.name %></h1>
+
+
+		<table class="table table-striped">
+			<tr>
+				<th>Przystanek A</th>
+				<td><%= @distance.from_stop.name %></td>
+			</tr>
+
+			<tr>
+				<th>Przystanek B</th>
+				<td><%= @distance.to_stop.name %></td>
+			</tr>
+
+
+			<tr>
+				<th>Data wprowadzenia do bazy danych:</th>
+				<td><%= @distance.created_at %></td>
+			</tr>
+
+			<tr>
+				<th>Data ostatniej aktualizacji:</th>
+				<td><%= @distance.updated_at %></td>
+			</tr>
+		</table>
+
+		<div>
+			<%= link_to 'Powrót', distances_path, class: "btn btn-warning "%>
+		</div>
+	

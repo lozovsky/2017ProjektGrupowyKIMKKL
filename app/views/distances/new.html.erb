@@ -1,2 +1,6 @@
-<h1>Distances#new</h1>
-<p>Find me in app/views/distances/new.html.erb</p>
+<% provide(:title, 'Dodawanie odcinka') %>
+
+
+<h1>Dodaj nowy odcinek</h1>
+
+<%= render partial: "form", locals: {button_name: "Dodaj"}   %>

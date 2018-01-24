@@ -1,0 +1,39 @@
+  	<% if @distance.errors.present? %>
+		<div class="alert alert-danger">
+			<p>Wystapiły następujące błędy:</p>
+			<ol>
+				<% @distance.errors.full_messages.each do |message| %>
+					<li><%= message.titleize %></li>
+				<% end%>
+			</ol>
+		</div>
+	<% end %>
+
+
+		
+<%= form_for @distance do |f| %>
+
+
+	<table class="table table-striped">
+		<tr>
+			<th><%= f.label :from_stop_id, "Przystanek A: " %></th>
+			<td><%= f.select :from_stop_id, @stop_from.map{|m| [m.name,m.id]}, class: "form-control" %></td>
+		</tr>
+		<tr>
+			<th><%= f.label :to_stop_id, "Przystanek B: " %></th>
+			<td><%= f.select :to_stop_id, @stop_to.map{|m| [m.name,m.id]}, class: "form-control" %></td>
+		</tr>
+
+		<tr>
+			<th><%= f.label :travel_time, "Czas przejazdu między nimi: " %></th>
+			<td><%= f.text_field :travel_time, class: "form-control" %></td>
+		</tr>
+
+	</table>
+
+	<div class = "buttonform">
+		<%= f.submit button_name, class: "btn btn-primary sizebtn" %>
+		<%= link_to 'Powrót', distances_path, class: "btn btn-warning sizebtn" %>
+	</div>
+
+<% end %> 

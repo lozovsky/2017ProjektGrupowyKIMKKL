@@ -42,18 +42,6 @@ class DistancesController < ApplicationController
   end
   
 
-  def delete
-    @distance = Distance.find(params[:id])
-  end
-
-  def destroy
-    @distance = Distance.find(params[:id])
-    @Distance.destroy
-    flash[:notice] = "Pomyślnie usunięto odcinek"
-    redirect_to distance_path
-    
-  end
-
 private
   def distance_params
     params.require(:distance).permit(:from_stop_id, :to_stop_id,:travel_time, :created_at,:updated_at)

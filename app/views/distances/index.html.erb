@@ -21,10 +21,20 @@
 					<td><%= d.id %></td>
 					<td><%= d.from_stop.name %></td>
 					<td><%= d.to_stop.name %></td>
+					<td><%= d.travel_time%>
+					<% 
+						if d.travel_time == 1
+							concat " minuta"
+						elsif d.travel_time > 1 && d.travel_time < 5
+							concat " minuty"
+						else
+							concat " minut"
+						end
+
+					%></td>
 					<td class = "rightbuttonstable ">
 						<%= link_to "Pokaż", distance_path(d), class: "btn btn-default btn-xs" %>
 						<%= link_to "Edytuj", edit_distance_path(d), class: "btn btn-primary btn-xs" %>
-						<%= link_to "Usuń", delete_distance_path(d), class: "btn btn-danger btn-xs" %>
 					</td>
 					
 				</tr>

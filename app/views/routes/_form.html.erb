@@ -22,12 +22,12 @@
 
 		<tr>
 			<th><%= f.label :distance_id, "Odcinek na trasie: " %></th>
-			<td><%= f.select :distance_id, @line.map{|m| [m.id,m.id]}, class: "form-control" %></td>
+			<td><%= f.select :distance_id, @distance.map{|m| [m.from_stop.name + "-" + m.to_stop.name, m.id]}, class: "form-control" %></td>
 		</tr>
 		
 		<tr>
-			<%= f.label :stop_number, "Kolejność odcinka: " %>
-			<%= f.text_field :stop_number, class: "form-control" %>
+			<th><%= f.label :stop_number, "Kolejność odcinka: " %></th>
+			<td><%= f.text_field :stop_number, class: "form-control" %></td>
 		</tr>
 	</table>
 

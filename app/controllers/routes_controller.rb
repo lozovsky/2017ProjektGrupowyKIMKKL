@@ -11,8 +11,8 @@ class RoutesController < ApplicationController
 
   def new
     @route = Route.new
-    @line = Line.orderby
-    @distance = Distance.orderby
+    @line = Line.all
+    @distance = Distance.all
   end
 
   def create
@@ -22,7 +22,7 @@ class RoutesController < ApplicationController
       redirect_to routes_path
     else
       render 'new'
-    end
+    end 
   end
 
   def edit
@@ -54,8 +54,8 @@ class RoutesController < ApplicationController
   end
 
 private
-  def route_params
-    params.require(:route).permit(:line_id, :distance_id, :stop_number, :created_at, :updated_at)
+   def route_params
+    params.require(:route).permit(:line_id, :distance_id,:stop_number, :created_at,:updated_at)
   end
 end
 

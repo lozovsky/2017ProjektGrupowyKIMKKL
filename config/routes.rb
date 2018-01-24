@@ -12,12 +12,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :distances do
-    member do
-      get :delete
-    end
-  end
-
   resources :lines
   resources :stops
   resources :timetables
