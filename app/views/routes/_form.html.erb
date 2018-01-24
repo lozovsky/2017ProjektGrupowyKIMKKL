@@ -1,0 +1,39 @@
+   	<% if @route.errors.present? %>
+		<div class="alert alert-danger">
+			<p>Wystapiły następujące błędy:</p>
+			<ol>
+				<% @route.errors.full_messages.each do |message| %>
+					<li><%= message.titleize %></li>
+				<% end%>
+			</ol>
+		</div>
+	<% end %>
+
+
+		
+<%= form_for @route do |f| %>
+
+
+	<table class="table table-striped">
+		<tr>
+			<th><%= f.label :line_id, "Linia tramwajowa: " %></th>
+			<td><%= f.select :line_id, @line.map{|m| [m.name,m.id]}, class: "form-control" %></td>
+		</tr>
+
+		<tr>
+			<th><%= f.label :distance_id, "Odcinek na trasie: " %></th>
+			<td><%= f.select :distance_id, @line.map{|m| [m.id,m.id]}, class: "form-control" %></td>
+		</tr>
+		
+		<tr>
+			<%= f.label :stop_number, "Kolejność odcinka: " %>
+			<%= f.text_field :stop_number, class: "form-control" %>
+		</tr>
+	</table>
+
+	<div class = "buttonform">
+		<%= f.submit button_name, class: "btn btn-primary sizebtn" %>
+		<%= link_to 'Powrót', routes_path, class: "btn btn-warning sizebtn" %>
+	</div>
+
+<% end %>

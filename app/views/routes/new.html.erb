@@ -1,2 +1,6 @@
-<h1>Routes#new</h1>
-<p>Find me in app/views/routes/new.html.erb</p>
+<% provide(:title, 'Dodawanie nowej trasy') %>
+
+
+<h1>Dodaj nową trasę</h1>
+
+<%= render partial: "form", locals: {button_name: "Dodaj"}   %>
