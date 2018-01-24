@@ -1,0 +1,36 @@
+ <% provide(:title, 'Odcinek') %>
+
+<h1>Lista odcinków</h1>
+
+<!--Przycisk new -->
+<p><%= link_to "Dodaj odcinek", new_distance_path, class: "btn btn-success" %></p>
+
+<!--Poczatek tabeli -->
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Przystanek A</th>
+			<th>Przystanek B</th>
+			<th>czas podróży</th>
+		</tr>
+
+		<tbody>
+			<% @distances.each do |d| %>
+				<tr>
+					<td><%= d.id %></td>
+					<td><%= d.from_stop.name %></td>
+					<td><%= d.to_stop.name %></td>
+					<td class = "rightbuttonstable ">
+						<%= link_to "Pokaż", distance_path(d), class: "btn btn-default btn-xs" %>
+						<%= link_to "Edytuj", edit_distance_path(d), class: "btn btn-primary btn-xs" %>
+						<%= link_to "Usuń", delete_distance_path(d), class: "btn btn-danger btn-xs" %>
+					</td>
+					
+				</tr>
+			<% end %>
+		</tbody>
+	</thead>
+</table>
+<!--koniec tabeli -->
+

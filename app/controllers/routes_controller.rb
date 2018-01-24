@@ -34,7 +34,7 @@ class RoutesController < ApplicationController
   def update
     @route = Route.find(params[:id])
 
-    if @route.update_attributes(timetable_params)
+    if @route.update_attributes(route_params)
       flash[:notice] = "Trasa została pomyślnie zaktualizowana."
       redirect_to routes_path
     else
