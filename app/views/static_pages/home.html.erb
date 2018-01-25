@@ -1,14 +1,14 @@
 <div class="center jumbotron">
   <% if logged_in? %>
-    asd
+    <%= link_to "Rozkład Jazdy", timetables_path, class: "btn btn-lg btn-primary" %>
   <% else %>
-  <h1>Welcome to MPK App</h1>
+    <h1>Welcome to MPK App</h1>
 
-  <h2>
-    Opis
-  </h2>
+    <h2>
+      Opis
+    </h2>
 
-  <%= link_to "Sign up!", signup_path, class: "btn btn-lg btn-primary" %>
+    <%= link_to "Sign up!", signup_path, class: "btn btn-lg btn-primary" %>
 <% end %>
 </div>
 
