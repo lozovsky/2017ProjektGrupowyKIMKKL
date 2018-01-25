@@ -3,24 +3,33 @@
     <%= link_to "mpk", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        
-        <li><%= link_to "Strona główna", root_path %></li>
-
-        
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Zarządzaj <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              
-              <li><%= link_to "Rozkład", timetables_path %></li>
-              <li><%= link_to "Przystanki", stops_path %></li>
-              <li><%= link_to "Linie", lines_path %></li>
-              <li><%= link_to "Odcinki", distances_path %></li>
-              <li><%= link_to "Trasa", routes_path %></li>
-            </ul>
+        <% if logged_in? %>
+           <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                 Rozkład <b class="caret"></b>
+               </a>
+               <ul class="dropdown-menu">
+                 <li><%= link_to "Rozkład", timetables_path %></li>
+                 <li><%= link_to "Przystanki", stops_path %></li>
+                 <li><%= link_to "Linie", lines_path %></li>
+               </ul>
           </li>
-         
+        <% end %>
+
+        <% if logged_in? && current_user.admin? %>
+           <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                 Zarządzaj <b class="caret"></b>
+               </a>
+               <ul class="dropdown-menu">
+                 <li><%= link_to "Rozkład", timetables_path %></li>
+                 <li><%= link_to "Przystanki", stops_path %></li>
+                 <li><%= link_to "Linie", lines_path %></li>
+                 <li><%= link_to "Odcinki", distances_path %></li>
+                 <li><%= link_to "Trasa", routes_path %></li>
+               </ul>
+          </li>
+        <% end %>
 
 
         <% if logged_in? %>
