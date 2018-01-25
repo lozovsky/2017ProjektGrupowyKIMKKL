@@ -24,6 +24,8 @@ class RoutesController < ApplicationController
       flash[:notice] = "Trasa została pomyślnie dodana."
       redirect_to routes_path
     else
+      @line = Line.all
+      @distance = Distance.all
       render 'new'
     end 
   end
@@ -41,6 +43,8 @@ class RoutesController < ApplicationController
       flash[:notice] = "Trasa została pomyślnie zaktualizowana."
       redirect_to routes_path
     else
+      @line = Line.all
+      @distance = Distance.all
       render action: 'edit'
     end
   end

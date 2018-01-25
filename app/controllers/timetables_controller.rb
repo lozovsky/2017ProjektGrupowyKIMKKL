@@ -22,6 +22,7 @@ class TimetablesController < ApplicationController
 			flash[:notice] = "Rozkład jazdy pomyślnie dodany."
 			redirect_to timetables_path
 		else
+			@line = Line.orderby
 			render 'new'
 		end
 	end
@@ -38,6 +39,7 @@ class TimetablesController < ApplicationController
 	  		flash[:notice] = "Rozkład jazdy został pomyślnie zaktualizowany."
 	  		redirect_to timetables_path
 	  	else
+	  		@line = Line.orderby
 	  		render action: 'edit'
 	  	end
  	end

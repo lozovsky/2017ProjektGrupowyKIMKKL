@@ -4,4 +4,10 @@ class Distance < ApplicationRecord
   has_many :routes
 
   scope :orderby, lambda{order("id ASC")}
+
+
+  validates :travel_time,
+			   :numericality => {in: true, message: ": Pole musi być numerem."},
+			   presence: 	{in: true, message: ": Pole nie moze byc puste."}
+
 end

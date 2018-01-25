@@ -1,4 +1,4 @@
-  	<% if @distance.errors.present? %>
+ 	<% if @distance.errors.present? %>
 		<div class="alert alert-danger">
 			<p>Wystapiły następujące błędy:</p>
 			<ol>
@@ -26,7 +26,7 @@
 
 		<tr>
 			<th><%= f.label :travel_time, "Czas przejazdu między nimi: " %></th>
-			<td><%= f.text_field :travel_time, class: "form-control" %></td>
+			<td><%= f.number_field :travel_time, class: "form-control" %></td>
 		</tr>
 
 	</table>

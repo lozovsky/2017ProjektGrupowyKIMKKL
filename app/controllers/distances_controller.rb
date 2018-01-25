@@ -22,6 +22,8 @@ class DistancesController < ApplicationController
       flash[:notice] = "Odcinek został pomyślnie dodany."
       redirect_to distances_path
     else
+      @stop_from = Stop.orderby
+      @stop_to = Stop.orderby
       render 'new'
     end 
   end
@@ -35,12 +37,14 @@ class DistancesController < ApplicationController
   def update
     @distance = Distance.find(params[:id])
 
-      if @distance.update_attributes(distance_params)
-        flash[:notice] = "Odcinek został pomyślnie zaktualizowany."
-        redirect_to distances_path
-      else
-        render action: 'edit'
-      end
+    if @distance.update_attributes(distance_params)
+      flash[:notice] = "Odcinek został pomyślnie zaktualizowany."
+      redirect_to distances_path
+    else
+      @stop_from = Stop.orderby
+      @stop_to = Stop.orderby
+      render action: 'edit'
+    end
   end
   
 
