@@ -1,4 +1,7 @@
 class LinesController < ApplicationController
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
+
+
   def index
     @lines = Line.all
   end
@@ -44,4 +47,7 @@ private
   def line_params
     params.require(:line).permit(:name,:created_at,:updated_at)
   end
+
+
+  
 end
