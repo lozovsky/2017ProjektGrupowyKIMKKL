@@ -1,26 +1,14 @@
 require 'test_helper'
 
 class StaticPagesControllerTest < ActionDispatch::IntegrationTest
-  def setup
-    @base_title = "mpk db"
-  end
-  
-  test "should get home" do
-    get root_path
+  test "should get user_line" do
+    get static_pages_user_line_url
     assert_response :success
-    assert_select "title", "#{@base_title}"
   end
 
-  test "should get help" do
-    get help_path
+  test "should get user_stop" do
+    get static_pages_user_stop_url
     assert_response :success
-    assert_select "title", "Help | #{@base_title}"
-  end
-
-  test "should get contact" do
-    get contact_path
-    assert_response :success
-    assert_select "title", "Contact | #{@base_title}"
   end
 
 end
