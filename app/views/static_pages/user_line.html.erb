@@ -1,10 +1,15 @@
 <% Line.all.each do |linia| %>
   <%= link_to "Linia numer #{linia.id}", "", class: "btn btn-primary btn-lg btn-block disabled" %>
+  <% @time_shift = 0 %>
   <% Route.where(line_id: linia.id).each do |r| %>
     <%= link_to "Przystanek: #{r.distance.from_stop.name}", "", class: "btn btn-secondary btn-block disabled" %>
     <% Timetable.where(line_id: linia.id).each do |t| %>
-      <% start_stime = t.departure_time %>
-      <%= link_to "#{t.departure_time.strftime('%H:%M')}", "", class: "btn btn-success disabled" %>
+      <% @start_stime = t.departure_time %>
+      <% @timeshifted_start_time = @start_stime + @time_shift %>
+      <%= link_to "#{@timeshifted_start_time.strftime('%H:%M')}", "", class: "btn btn-success disabled" %>
+    <% end %>
+    <% Distance.where(id: r.distance_id).each do |d| %>
+      <% @time_shift += d.travel_time * 60 %>
     <% end %>
     <br>
   <% end %>
