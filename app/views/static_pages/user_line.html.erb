@@ -1,13 +1,13 @@
 <% Line.all.each do |linia| %>
-  <div class="btnek"><%= link_to "Linia numer #{linia.name}", "", class: "btn btn-primary btn-lg btn-block disabled" %></div>
+  <div class="btnek"><%= link_to "Linia numer #{linia.name}", "", class: "btn btn-primary btn-lg btn-block" %></div>
   <div class="contentcik">
     <% @time_shift = 0 %>
     <% Route.where(line_id: linia.id).each do |r| %>
-      <%= link_to "Przystanek: #{r.distance.from_stop.name}", "", class: "btn btn-secondary btn-block disabled" %>
+      <%= link_to "Przystanek: #{r.distance.from_stop.name}", "", class: "btn btn-secondary btn-block" %>
       <% Timetable.where(line_id: linia.id).each do |t| %>
         <% @start_stime = t.departure_time %>
         <% @timeshifted_start_time = @start_stime + @time_shift %>
-        <%= link_to "#{@timeshifted_start_time.strftime('%H:%M')}", "", class: "btn btn-success disabled" %>
+        <%= link_to "#{@timeshifted_start_time.strftime('%H:%M')}", "", class: "btn btn-success" %>
       <% end %>
       <% Distance.where(id: r.distance_id).each do |d| %>
         <% @time_shift += d.travel_time * 60 %>
