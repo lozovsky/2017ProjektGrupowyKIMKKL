@@ -1,3 +1,8 @@
 <% Line.all.each do |linia| %>
-  <%= link_to "Linia numer #{linia.id}", linia_path, class: "btn btn-primary" %>
+  <%= link_to "Linia numer #{linia.id}", "", class: "btn btn-primary btn-lg btn-block disabled" %>
+  <%= Route.where(line_id: linia.id).each do |r| %>
+    <%= link_to "Przystanek: #{r.distance.from_stop.name}", "", class: "btn btn-secondary btn-block disabled" %>
+    <br>
+  <% end %>
+  <br>
 <% end %> 
