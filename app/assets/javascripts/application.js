@@ -15,3 +15,14 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+
+ $(document).ready(function() {
+
+ $('.btnek').click(function(){
+ 	$(this).next('.contentcik').toggle(1500);
+ });
+
+});
+
+
