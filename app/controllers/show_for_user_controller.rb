@@ -1,2 +1,0 @@
-class ShowForUserController < ApplicationController
-end
